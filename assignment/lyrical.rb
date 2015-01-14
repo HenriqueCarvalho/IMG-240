@@ -249,7 +249,7 @@ class Lyrical
   private
   #return the largest key value 
   def largest_hash_key(hash)
-    hash.max_by{|k,v| v}[0] 
+    hash.max_by{|key,value| value}[0] 
   end
 
   # put any methods here that you might need internally but that won't be 
