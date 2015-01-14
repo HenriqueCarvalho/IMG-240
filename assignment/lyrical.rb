@@ -1,4 +1,7 @@
-# lyrical.rb is your first assignment. It takes a song's input and lets you 
+#
+# STUDENT: Henrique Carvalho
+#
+# lyrical.rb is your first assignment. It takes a song's input and lets you
 # see how many times a word occurs in the song.
 #
 # Save this file as lyrical.rb. Edit it with your text editor and run the tests
