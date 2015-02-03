@@ -199,14 +199,32 @@ class Lyrical
   def initialize(lyrics)
     #remove all especial and number characters
     @lyrics = lyrics;
+    @word_counts = {}
+    @lyrics.split(/ls/).each do |current_word|
+      clean_word = current_word.downcase.gsub(/w/,'')
+
+      unless @word_counts.key?(word)
+        @word_counts[clean_word] = 0
+      end
+
+      @word_counts[clean_word] += 1
+    end
   end
 
   # this should return a Boolean (true or false)
   def includes?(word)
+    clean_word = cleanup(word)
+    @word_counts.key?(clean_word)
   end
 
   # this should return a Numbers
   def count(word)
+    clean_word = cleanup(word)
+    if includes?(clean_word)
+      @word_counts[clean_word]
+    else
+      0
+    end
   end
 
   # this should return a String
@@ -215,6 +233,7 @@ class Lyrical
 
   # this should return an Array
   def alphabetical
+    @word_counts.keys.sort
   end
 
   private
